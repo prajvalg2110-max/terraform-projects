@@ -1,6 +1,6 @@
 ami_id = "ami-09aa82e803f05d496"
 
-instance_type = "t2.small"
+instance_type = "t3.small"
 
 instance_name = "server"
 
