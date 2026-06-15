@@ -1,9 +1,10 @@
 module "ec2" {
+    for_each = toset(var.server_names)
     source = "../modules/ec2"
 
     ami_id = var.ami_id
     instance_type = var.instance_type
-    instance_name = "${terraform.workspace}-server"
+    instance_name = "${terraform.workspace}-${each.value}"
 
 
     subnet_id = module.subnet.subnet_id
